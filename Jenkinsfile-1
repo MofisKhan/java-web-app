@@ -7,7 +7,7 @@ pipeline {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
-          sh './mvnw clean sonar:sonar'
+          sh './mvnw clean sonar:sonar -Dsonar.project=java-web-app -Dsonar.projectkey=MofisKhan_java-web-app -Dsonar.organizationkey=mofiskhan'
         }
       }
     }
